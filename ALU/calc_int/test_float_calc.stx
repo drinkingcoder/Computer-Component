@@ -1,0 +1,51 @@
+Release 12.4 - xst M.81d (nt64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to Y:/Desktop/calc/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to Y:/Desktop/calc/xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "count_digits_low.v" in library work
+Compiling verilog file "count_digits_high.v" in library work
+Module <count_digits_low> compiled
+Compiling verilog file "float_add.v" in library work
+Module <count_digits_high> compiled
+Compiling verilog file "float_sub.v" in library work
+Module <float_add> compiled
+Compiling verilog file "float_mul.v" in library work
+Module <float_sub> compiled
+Compiling verilog file "float_div.v" in library work
+Module <float_mul> compiled
+Compiling verilog file "float_calc.v" in library work
+Module <float_div> compiled
+Compiling verilog file "test_float_calc.v" in library work
+Module <float_calc> compiled
+Module <test_float_calc> compiled
+No errors in compilation
+Analysis of file <"test_float_calc.prj"> succeeded.
+ 
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> 
+
+Total memory usage is 204132 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

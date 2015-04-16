@@ -1,0 +1,637 @@
+--------------------------------------------------------------------------------
+Release 12.4 Trace  (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\12.4\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf UCF.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc3s200,ft256,-5 (PRODUCTION 1.39 2010-11-18)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "clk_50mhz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+
+ 125106 paths analyzed, 1322 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  15.544ns.
+--------------------------------------------------------------------------------
+
+Paths for end point M6/diver/mod_r_31 (SLICE_X4Y35.G1), 8501 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     4.456ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/op_2 (FF)
+  Destination:          M6/diver/mod_r_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.544ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/op_2 to M6/diver/mod_r_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y33.YQ      Tcko                  0.626   M6/diver/op_2
+                                                       M6/diver/op_2
+    SLICE_X5Y28.G1       net (fanout=13)       1.741   M6/diver/op_2
+    SLICE_X5Y28.X        Tif5x                 0.793   N186
+                                                       M6/diver/adder_m/A4/co1_SW1_F
+                                                       M6/diver/adder_m/A4/co1_SW1
+    SLICE_X8Y28.G4       net (fanout=4)        1.113   N186
+    SLICE_X8Y28.Y        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A5/co1_SW1
+    SLICE_X8Y28.F3       net (fanout=2)        0.358   N280
+    SLICE_X8Y28.X        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A7/co1
+    SLICE_X5Y39.G1       net (fanout=18)       1.618   M6/diver/adder_m/Ctemp<7>
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.COUT     Topcyf                0.791   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.CIN      net (fanout=1)        0.000   M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.Y        Tciny                 0.803   M6/diver/mod_r_addsub0000<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<31>
+    SLICE_X4Y35.G1       net (fanout=1)        1.293   M6/diver/mod_r_addsub0000<31>
+    SLICE_X4Y35.CLK      Tgck                  0.600   M6/diver/mod_r<31>
+                                                       M6/diver/mod_r_mux0000<62>321
+                                                       M6/diver/mod_r_31
+    -------------------------------------------------  ---------------------------
+    Total                                     15.544ns (5.690ns logic, 9.854ns route)
+                                                       (36.6% logic, 63.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.548ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/mod_r_13 (FF)
+  Destination:          M6/diver/mod_r_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.452ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/mod_r_13 to M6/diver/mod_r_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y37.XQ       Tcko                  0.626   M6/diver/mod_r<13>
+                                                       M6/diver/mod_r_13
+    SLICE_X1Y37.G1       net (fanout=9)        2.356   M6/diver/mod_r<13>
+    SLICE_X1Y37.X        Tif5x                 0.793   N170
+                                                       M6/diver/adder_m/A14/co1_SW0_F
+                                                       M6/diver/adder_m/A14/co1_SW0
+    SLICE_X3Y36.G1       net (fanout=2)        0.587   N170
+    SLICE_X3Y36.Y        Tilo                  0.479   N415
+                                                       M6/diver/adder_m/A13/co1_SW1
+    SLICE_X2Y36.F2       net (fanout=2)        0.160   N274
+    SLICE_X2Y36.X        Tilo                  0.529   N414
+                                                       M6/diver/adder_m/A11/co1_SW0
+    SLICE_X5Y39.G4       net (fanout=4)        1.685   N414
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.COUT     Topcyf                0.791   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.CIN      net (fanout=1)        0.000   M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.Y        Tciny                 0.803   M6/diver/mod_r_addsub0000<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<31>
+    SLICE_X4Y35.G1       net (fanout=1)        1.293   M6/diver/mod_r_addsub0000<31>
+    SLICE_X4Y35.CLK      Tgck                  0.600   M6/diver/mod_r<31>
+                                                       M6/diver/mod_r_mux0000<62>321
+                                                       M6/diver/mod_r_31
+    -------------------------------------------------  ---------------------------
+    Total                                     15.452ns (5.640ns logic, 9.812ns route)
+                                                       (36.5% logic, 63.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.583ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/op_2 (FF)
+  Destination:          M6/diver/mod_r_31 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.417ns (Levels of Logic = 8)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/op_2 to M6/diver/mod_r_31
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y33.YQ      Tcko                  0.626   M6/diver/op_2
+                                                       M6/diver/op_2
+    SLICE_X5Y28.F1       net (fanout=13)       1.614   M6/diver/op_2
+    SLICE_X5Y28.X        Tif5x                 0.793   N186
+                                                       M6/diver/adder_m/A4/co1_SW1_G
+                                                       M6/diver/adder_m/A4/co1_SW1
+    SLICE_X8Y28.G4       net (fanout=4)        1.113   N186
+    SLICE_X8Y28.Y        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A5/co1_SW1
+    SLICE_X8Y28.F3       net (fanout=2)        0.358   N280
+    SLICE_X8Y28.X        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A7/co1
+    SLICE_X5Y39.G1       net (fanout=18)       1.618   M6/diver/adder_m/Ctemp<7>
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.COUT     Topcyf                0.791   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.CIN      net (fanout=1)        0.000   M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.Y        Tciny                 0.803   M6/diver/mod_r_addsub0000<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<31>
+    SLICE_X4Y35.G1       net (fanout=1)        1.293   M6/diver/mod_r_addsub0000<31>
+    SLICE_X4Y35.CLK      Tgck                  0.600   M6/diver/mod_r<31>
+                                                       M6/diver/mod_r_mux0000<62>321
+                                                       M6/diver/mod_r_31
+    -------------------------------------------------  ---------------------------
+    Total                                     15.417ns (5.690ns logic, 9.727ns route)
+                                                       (36.9% logic, 63.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M6/diver/mod_r_30 (SLICE_X11Y45.F3), 7833 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     4.591ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/op_2 (FF)
+  Destination:          M6/diver/mod_r_30 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.408ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.001ns (0.122 - 0.123)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/op_2 to M6/diver/mod_r_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y33.YQ      Tcko                  0.626   M6/diver/op_2
+                                                       M6/diver/op_2
+    SLICE_X5Y28.G1       net (fanout=13)       1.741   M6/diver/op_2
+    SLICE_X5Y28.X        Tif5x                 0.793   N186
+                                                       M6/diver/adder_m/A4/co1_SW1_F
+                                                       M6/diver/adder_m/A4/co1_SW1
+    SLICE_X8Y28.G4       net (fanout=4)        1.113   N186
+    SLICE_X8Y28.Y        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A5/co1_SW1
+    SLICE_X8Y28.F3       net (fanout=2)        0.358   N280
+    SLICE_X8Y28.X        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A7/co1
+    SLICE_X5Y39.G1       net (fanout=18)       1.618   M6/diver/adder_m/Ctemp<7>
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.COUT     Topcyf                0.791   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.CIN      net (fanout=1)        0.000   M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.X        Tcinx                 0.786   M6/diver/mod_r_addsub0000<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<30>
+    SLICE_X11Y45.F3      net (fanout=1)        0.910   M6/diver/mod_r_addsub0000<30>
+    SLICE_X11Y45.CLK     Tfck                  0.864   M6/diver/mod_r<30>
+                                                       M6/diver/mod_r_mux0000<61>491_G
+                                                       M6/diver/mod_r_mux0000<61>491
+                                                       M6/diver/mod_r_30
+    -------------------------------------------------  ---------------------------
+    Total                                     15.408ns (5.937ns logic, 9.471ns route)
+                                                       (38.5% logic, 61.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.683ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/mod_r_13 (FF)
+  Destination:          M6/diver/mod_r_30 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.316ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.001ns (0.122 - 0.123)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/mod_r_13 to M6/diver/mod_r_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y37.XQ       Tcko                  0.626   M6/diver/mod_r<13>
+                                                       M6/diver/mod_r_13
+    SLICE_X1Y37.G1       net (fanout=9)        2.356   M6/diver/mod_r<13>
+    SLICE_X1Y37.X        Tif5x                 0.793   N170
+                                                       M6/diver/adder_m/A14/co1_SW0_F
+                                                       M6/diver/adder_m/A14/co1_SW0
+    SLICE_X3Y36.G1       net (fanout=2)        0.587   N170
+    SLICE_X3Y36.Y        Tilo                  0.479   N415
+                                                       M6/diver/adder_m/A13/co1_SW1
+    SLICE_X2Y36.F2       net (fanout=2)        0.160   N274
+    SLICE_X2Y36.X        Tilo                  0.529   N414
+                                                       M6/diver/adder_m/A11/co1_SW0
+    SLICE_X5Y39.G4       net (fanout=4)        1.685   N414
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.COUT     Topcyf                0.791   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.CIN      net (fanout=1)        0.000   M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.X        Tcinx                 0.786   M6/diver/mod_r_addsub0000<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<30>
+    SLICE_X11Y45.F3      net (fanout=1)        0.910   M6/diver/mod_r_addsub0000<30>
+    SLICE_X11Y45.CLK     Tfck                  0.864   M6/diver/mod_r<30>
+                                                       M6/diver/mod_r_mux0000<61>491_G
+                                                       M6/diver/mod_r_mux0000<61>491
+                                                       M6/diver/mod_r_30
+    -------------------------------------------------  ---------------------------
+    Total                                     15.316ns (5.887ns logic, 9.429ns route)
+                                                       (38.4% logic, 61.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     4.718ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/op_2 (FF)
+  Destination:          M6/diver/mod_r_30 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      15.281ns (Levels of Logic = 8)
+  Clock Path Skew:      -0.001ns (0.122 - 0.123)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/op_2 to M6/diver/mod_r_30
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y33.YQ      Tcko                  0.626   M6/diver/op_2
+                                                       M6/diver/op_2
+    SLICE_X5Y28.F1       net (fanout=13)       1.614   M6/diver/op_2
+    SLICE_X5Y28.X        Tif5x                 0.793   N186
+                                                       M6/diver/adder_m/A4/co1_SW1_G
+                                                       M6/diver/adder_m/A4/co1_SW1
+    SLICE_X8Y28.G4       net (fanout=4)        1.113   N186
+    SLICE_X8Y28.Y        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A5/co1_SW1
+    SLICE_X8Y28.F3       net (fanout=2)        0.358   N280
+    SLICE_X8Y28.X        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A7/co1
+    SLICE_X5Y39.G1       net (fanout=18)       1.618   M6/diver/adder_m/Ctemp<7>
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.COUT     Topcyf                0.791   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.CIN      net (fanout=1)        0.000   M6/diver/Madd_mod_r_addsub0000_cy<29>
+    SLICE_X6Y45.X        Tcinx                 0.786   M6/diver/mod_r_addsub0000<30>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<30>
+    SLICE_X11Y45.F3      net (fanout=1)        0.910   M6/diver/mod_r_addsub0000<30>
+    SLICE_X11Y45.CLK     Tfck                  0.864   M6/diver/mod_r<30>
+                                                       M6/diver/mod_r_mux0000<61>491_G
+                                                       M6/diver/mod_r_mux0000<61>491
+                                                       M6/diver/mod_r_30
+    -------------------------------------------------  ---------------------------
+    Total                                     15.281ns (5.937ns logic, 9.344ns route)
+                                                       (38.9% logic, 61.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M6/diver/mod_r_29 (SLICE_X8Y45.F2), 7221 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     5.278ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/op_2 (FF)
+  Destination:          M6/diver/mod_r_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      14.721ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.001ns (0.122 - 0.123)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/op_2 to M6/diver/mod_r_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y33.YQ      Tcko                  0.626   M6/diver/op_2
+                                                       M6/diver/op_2
+    SLICE_X5Y28.G1       net (fanout=13)       1.741   M6/diver/op_2
+    SLICE_X5Y28.X        Tif5x                 0.793   N186
+                                                       M6/diver/adder_m/A4/co1_SW1_F
+                                                       M6/diver/adder_m/A4/co1_SW1
+    SLICE_X8Y28.G4       net (fanout=4)        1.113   N186
+    SLICE_X8Y28.Y        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A5/co1_SW1
+    SLICE_X8Y28.F3       net (fanout=2)        0.358   N280
+    SLICE_X8Y28.X        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A7/co1
+    SLICE_X5Y39.G1       net (fanout=18)       1.618   M6/diver/adder_m/Ctemp<7>
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.Y        Topy                  1.293   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<29>
+    SLICE_X8Y45.F2       net (fanout=1)        0.457   M6/diver/mod_r_addsub0000<29>
+    SLICE_X8Y45.CLK      Tfck                  0.914   M6/diver/mod_r<29>
+                                                       M6/diver/mod_r_mux0000<60>491_G
+                                                       M6/diver/mod_r_mux0000<60>491
+                                                       M6/diver/mod_r_29
+    -------------------------------------------------  ---------------------------
+    Total                                     14.721ns (5.703ns logic, 9.018ns route)
+                                                       (38.7% logic, 61.3% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.370ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/mod_r_13 (FF)
+  Destination:          M6/diver/mod_r_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      14.629ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.001ns (0.122 - 0.123)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/mod_r_13 to M6/diver/mod_r_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X8Y37.XQ       Tcko                  0.626   M6/diver/mod_r<13>
+                                                       M6/diver/mod_r_13
+    SLICE_X1Y37.G1       net (fanout=9)        2.356   M6/diver/mod_r<13>
+    SLICE_X1Y37.X        Tif5x                 0.793   N170
+                                                       M6/diver/adder_m/A14/co1_SW0_F
+                                                       M6/diver/adder_m/A14/co1_SW0
+    SLICE_X3Y36.G1       net (fanout=2)        0.587   N170
+    SLICE_X3Y36.Y        Tilo                  0.479   N415
+                                                       M6/diver/adder_m/A13/co1_SW1
+    SLICE_X2Y36.F2       net (fanout=2)        0.160   N274
+    SLICE_X2Y36.X        Tilo                  0.529   N414
+                                                       M6/diver/adder_m/A11/co1_SW0
+    SLICE_X5Y39.G4       net (fanout=4)        1.685   N414
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.Y        Topy                  1.293   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<29>
+    SLICE_X8Y45.F2       net (fanout=1)        0.457   M6/diver/mod_r_addsub0000<29>
+    SLICE_X8Y45.CLK      Tfck                  0.914   M6/diver/mod_r<29>
+                                                       M6/diver/mod_r_mux0000<60>491_G
+                                                       M6/diver/mod_r_mux0000<60>491
+                                                       M6/diver/mod_r_29
+    -------------------------------------------------  ---------------------------
+    Total                                     14.629ns (5.653ns logic, 8.976ns route)
+                                                       (38.6% logic, 61.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     5.405ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M6/diver/op_2 (FF)
+  Destination:          M6/diver/mod_r_29 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      14.594ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.001ns (0.122 - 0.123)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M6/diver/op_2 to M6/diver/mod_r_29
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X11Y33.YQ      Tcko                  0.626   M6/diver/op_2
+                                                       M6/diver/op_2
+    SLICE_X5Y28.F1       net (fanout=13)       1.614   M6/diver/op_2
+    SLICE_X5Y28.X        Tif5x                 0.793   N186
+                                                       M6/diver/adder_m/A4/co1_SW1_G
+                                                       M6/diver/adder_m/A4/co1_SW1
+    SLICE_X8Y28.G4       net (fanout=4)        1.113   N186
+    SLICE_X8Y28.Y        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A5/co1_SW1
+    SLICE_X8Y28.F3       net (fanout=2)        0.358   N280
+    SLICE_X8Y28.X        Tilo                  0.529   M6/diver/adder_m/Ctemp<7>
+                                                       M6/diver/adder_m/A7/co1
+    SLICE_X5Y39.G1       net (fanout=18)       1.618   M6/diver/adder_m/Ctemp<7>
+    SLICE_X5Y39.Y        Tilo                  0.479   M6/diver/tmp_sum<16>
+                                                       M6/diver/adder_m/A15/co1_1
+    SLICE_X17Y44.BX      net (fanout=14)       2.537   M6/diver/adder_m/A15/co1
+    SLICE_X17Y44.X       Tbxx                  0.540   M6/diver/tmp_sum<28>
+                                                       M6/diver/adder_m/A29/Mxor_s_xo<0>1
+    SLICE_X6Y44.F1       net (fanout=4)        1.194   M6/diver/tmp_sum<28>
+    SLICE_X6Y44.Y        Topy                  1.293   M6/diver/mod_r_addsub0000<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_cy<28>
+                                                       M6/diver/Madd_mod_r_addsub0000_xor<29>
+    SLICE_X8Y45.F2       net (fanout=1)        0.457   M6/diver/mod_r_addsub0000<29>
+    SLICE_X8Y45.CLK      Tfck                  0.914   M6/diver/mod_r<29>
+                                                       M6/diver/mod_r_mux0000<60>491_G
+                                                       M6/diver/mod_r_mux0000<60>491
+                                                       M6/diver/mod_r_29
+    -------------------------------------------------  ---------------------------
+    Total                                     14.594ns (5.703ns logic, 8.891ns route)
+                                                       (39.1% logic, 60.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk_50mhz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point M2/count_16 (SLICE_X35Y36.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.720ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M2/count_16 (FF)
+  Destination:          M2/count_16 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.720ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 20.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M2/count_16 to M2/count_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X35Y36.XQ      Tcko                  0.501   M2/count<16>
+                                                       M2/count_16
+    SLICE_X35Y36.BX      net (fanout=5)        0.465   M2/count<16>
+    SLICE_X35Y36.CLK     Tckdi       (-Th)     0.246   M2/count<16>
+                                                       M2/count_16
+    -------------------------------------------------  ---------------------------
+    Total                                      0.720ns (0.255ns logic, 0.465ns route)
+                                                       (35.4% logic, 64.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M6/muler/out_11 (SLICE_X17Y27.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.721ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M6/muler/out_r_11 (FF)
+  Destination:          M6/muler/out_11 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.721ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 20.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M6/muler/out_r_11 to M6/muler/out_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X16Y26.XQ      Tcko                  0.501   M6/muler/out_r<11>
+                                                       M6/muler/out_r_11
+    SLICE_X17Y27.BX      net (fanout=3)        0.466   M6/muler/out_r<11>
+    SLICE_X17Y27.CLK     Tckdi       (-Th)     0.246   M6/muler/out<11>
+                                                       M6/muler/out_11
+    -------------------------------------------------  ---------------------------
+    Total                                      0.721ns (0.255ns logic, 0.466ns route)
+                                                       (35.4% logic, 64.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M6/muler/out_21 (SLICE_X12Y23.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.736ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M6/muler/out_r_21 (FF)
+  Destination:          M6/muler/out_21 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.736ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 20.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M6/muler/out_r_21 to M6/muler/out_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y22.XQ      Tcko                  0.501   M6/muler/out_r<21>
+                                                       M6/muler/out_r_21
+    SLICE_X12Y23.BX      net (fanout=3)        0.481   M6/muler/out_r<21>
+    SLICE_X12Y23.CLK     Tckdi       (-Th)     0.246   M6/muler/out<21>
+                                                       M6/muler/out_21
+    -------------------------------------------------  ---------------------------
+    Total                                      0.736ns (0.255ns logic, 0.481ns route)
+                                                       (34.6% logic, 65.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk_50mhz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.634ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.683ns (Tcl)
+  Physical resource: M2/count<0>/CLK
+  Logical resource: M2/count_0/CK
+  Location pin: SLICE_X32Y40.CLK
+  Clock network: clk_50mhz_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.634ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.683ns (Tch)
+  Physical resource: M2/count<0>/CLK
+  Logical resource: M2/count_0/CK
+  Location pin: SLICE_X32Y40.CLK
+  Clock network: clk_50mhz_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.634ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.366ns (732.064MHz) (Tcp)
+  Physical resource: M2/count<0>/CLK
+  Logical resource: M2/count_0/CK
+  Location pin: SLICE_X32Y40.CLK
+  Clock network: clk_50mhz_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk_50mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_50mhz      |   15.544|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 125106 paths, 0 nets, and 3520 connections
+
+Design statistics:
+   Minimum period:  15.544ns{1}   (Maximum frequency:  64.334MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Apr 14 14:59:00 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 102 MB
+
+
+

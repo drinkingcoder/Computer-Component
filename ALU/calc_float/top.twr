@@ -1,0 +1,780 @@
+--------------------------------------------------------------------------------
+Release 12.4 Trace  (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\12.4\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 5 -n
+3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf -ucf UCF.ucf
+
+Design file:              top.ncd
+Physical constraint file: top.pcf
+Device,package,speed:     xc3s200,ft256,-5 (PRODUCTION 1.39 2010-11-18)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "clk_50mhz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+
+ 2021723 paths analyzed, 2512 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  17.766ns.
+--------------------------------------------------------------------------------
+
+Paths for end point M7/float_mul_ins/S_17 (SLICE_X27Y36.F2), 975 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     2.234ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_0 (FF)
+  Destination:          M7/float_mul_ins/S_17 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.763ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.003ns (0.380 - 0.383)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_0 to M7/float_mul_ins/S_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y27.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<1>
+                                                       M7/float_mul_ins/oldb_0
+    SLICE_X3Y26.F2       net (fanout=1)        1.425   M7/float_mul_ins/oldb<0>
+    SLICE_X3Y26.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<0>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<0>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+    SLICE_X3Y27.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+    SLICE_X3Y27.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<4>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<6>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<8>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<10>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.F2      net (fanout=33)       4.275   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.CLK     Tfck                  0.550   M7/float_mul_ins/S<17>
+                                                       M7/float_mul_ins/S_mux0000<14>11
+                                                       M7/float_mul_ins/S_17
+    -------------------------------------------------  ---------------------------
+    Total                                     17.763ns (4.896ns logic, 12.867ns route)
+                                                       (27.6% logic, 72.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     2.320ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_24 (FF)
+  Destination:          M7/float_mul_ins/S_17 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.679ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.001ns (0.380 - 0.381)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_24 to M7/float_mul_ins/S_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y35.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<25>
+                                                       M7/float_mul_ins/oldb_24
+    SLICE_X3Y32.F1       net (fanout=1)        2.007   M7/float_mul_ins/oldb<24>
+    SLICE_X3Y32.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.F2      net (fanout=33)       4.275   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.CLK     Tfck                  0.550   M7/float_mul_ins/S<17>
+                                                       M7/float_mul_ins/S_mux0000<14>11
+                                                       M7/float_mul_ins/S_17
+    -------------------------------------------------  ---------------------------
+    Total                                     17.679ns (4.230ns logic, 13.449ns route)
+                                                       (23.9% logic, 76.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     2.560ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_4 (FF)
+  Destination:          M7/float_mul_ins/S_17 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.437ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.003ns (0.380 - 0.383)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_4 to M7/float_mul_ins/S_17
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y26.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<5>
+                                                       M7/float_mul_ins/oldb_4
+    SLICE_X3Y27.F2       net (fanout=1)        1.210   M7/float_mul_ins/oldb<4>
+    SLICE_X3Y27.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<4>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<6>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<8>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<10>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.F2      net (fanout=33)       4.275   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.CLK     Tfck                  0.550   M7/float_mul_ins/S<17>
+                                                       M7/float_mul_ins/S_mux0000<14>11
+                                                       M7/float_mul_ins/S_17
+    -------------------------------------------------  ---------------------------
+    Total                                     17.437ns (4.785ns logic, 12.652ns route)
+                                                       (27.4% logic, 72.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M7/float_mul_ins/S_16 (SLICE_X27Y36.G2), 975 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     2.280ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_0 (FF)
+  Destination:          M7/float_mul_ins/S_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.717ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.003ns (0.380 - 0.383)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_0 to M7/float_mul_ins/S_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y27.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<1>
+                                                       M7/float_mul_ins/oldb_0
+    SLICE_X3Y26.F2       net (fanout=1)        1.425   M7/float_mul_ins/oldb<0>
+    SLICE_X3Y26.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<0>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<0>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+    SLICE_X3Y27.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+    SLICE_X3Y27.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<4>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<6>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<8>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<10>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.G2      net (fanout=33)       4.229   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.CLK     Tgck                  0.550   M7/float_mul_ins/S<17>
+                                                       M7/float_mul_ins/S_mux0000<15>11
+                                                       M7/float_mul_ins/S_16
+    -------------------------------------------------  ---------------------------
+    Total                                     17.717ns (4.896ns logic, 12.821ns route)
+                                                       (27.6% logic, 72.4% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     2.366ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_24 (FF)
+  Destination:          M7/float_mul_ins/S_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.633ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.001ns (0.380 - 0.381)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_24 to M7/float_mul_ins/S_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y35.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<25>
+                                                       M7/float_mul_ins/oldb_24
+    SLICE_X3Y32.F1       net (fanout=1)        2.007   M7/float_mul_ins/oldb<24>
+    SLICE_X3Y32.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.G2      net (fanout=33)       4.229   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.CLK     Tgck                  0.550   M7/float_mul_ins/S<17>
+                                                       M7/float_mul_ins/S_mux0000<15>11
+                                                       M7/float_mul_ins/S_16
+    -------------------------------------------------  ---------------------------
+    Total                                     17.633ns (4.230ns logic, 13.403ns route)
+                                                       (24.0% logic, 76.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     2.606ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_4 (FF)
+  Destination:          M7/float_mul_ins/S_16 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.391ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.003ns (0.380 - 0.383)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_4 to M7/float_mul_ins/S_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y26.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<5>
+                                                       M7/float_mul_ins/oldb_4
+    SLICE_X3Y27.F2       net (fanout=1)        1.210   M7/float_mul_ins/oldb<4>
+    SLICE_X3Y27.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<4>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<6>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<8>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<10>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.G2      net (fanout=33)       4.229   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X27Y36.CLK     Tgck                  0.550   M7/float_mul_ins/S<17>
+                                                       M7/float_mul_ins/S_mux0000<15>11
+                                                       M7/float_mul_ins/S_16
+    -------------------------------------------------  ---------------------------
+    Total                                     17.391ns (4.785ns logic, 12.606ns route)
+                                                       (27.5% logic, 72.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M7/float_mul_ins/S_20 (SLICE_X26Y37.G3), 975 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     2.335ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_0 (FF)
+  Destination:          M7/float_mul_ins/S_20 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.662ns (Levels of Logic = 13)
+  Clock Path Skew:      -0.003ns (0.380 - 0.383)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_0 to M7/float_mul_ins/S_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X1Y27.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<1>
+                                                       M7/float_mul_ins/oldb_0
+    SLICE_X3Y26.F2       net (fanout=1)        1.425   M7/float_mul_ins/oldb<0>
+    SLICE_X3Y26.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<0>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<0>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+    SLICE_X3Y27.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<1>
+    SLICE_X3Y27.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<4>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<6>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<8>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<10>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X26Y37.G3      net (fanout=33)       4.124   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X26Y37.CLK     Tgck                  0.600   M7/float_mul_ins/S<21>
+                                                       M7/float_mul_ins/S_mux0000<11>11
+                                                       M7/float_mul_ins/S_20
+    -------------------------------------------------  ---------------------------
+    Total                                     17.662ns (4.946ns logic, 12.716ns route)
+                                                       (28.0% logic, 72.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     2.421ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_24 (FF)
+  Destination:          M7/float_mul_ins/S_20 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.578ns (Levels of Logic = 7)
+  Clock Path Skew:      -0.001ns (0.380 - 0.381)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_24 to M7/float_mul_ins/S_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y35.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<25>
+                                                       M7/float_mul_ins/oldb_24
+    SLICE_X3Y32.F1       net (fanout=1)        2.007   M7/float_mul_ins/oldb<24>
+    SLICE_X3Y32.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X26Y37.G3      net (fanout=33)       4.124   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X26Y37.CLK     Tgck                  0.600   M7/float_mul_ins/S<21>
+                                                       M7/float_mul_ins/S_mux0000<11>11
+                                                       M7/float_mul_ins/S_20
+    -------------------------------------------------  ---------------------------
+    Total                                     17.578ns (4.280ns logic, 13.298ns route)
+                                                       (24.3% logic, 75.7% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     2.661ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M7/float_mul_ins/oldb_4 (FF)
+  Destination:          M7/float_mul_ins/S_20 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      17.336ns (Levels of Logic = 12)
+  Clock Path Skew:      -0.003ns (0.380 - 0.383)
+  Source Clock:         clk_50mhz_BUFGP rising at 0.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M7/float_mul_ins/oldb_4 to M7/float_mul_ins/S_20
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X0Y26.YQ       Tcko                  0.626   M7/float_mul_ins/oldb<5>
+                                                       M7/float_mul_ins/oldb_4
+    SLICE_X3Y27.F2       net (fanout=1)        1.210   M7/float_mul_ins/oldb<4>
+    SLICE_X3Y27.COUT     Topcyf                0.894   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_lut<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<2>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<3>
+    SLICE_X3Y28.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<4>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<5>
+    SLICE_X3Y29.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<6>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<7>
+    SLICE_X3Y30.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<8>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<9>
+    SLICE_X3Y31.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<10>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<11>
+    SLICE_X3Y32.COUT     Tbyp                  0.111   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<12>
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.G3      net (fanout=1)        1.483   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<13>
+    SLICE_X19Y37.Y       Tilo                  0.479   M7/float_mul_ins/_old_h_30<10>11_1
+                                                       M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>1
+    SLICE_X38Y8.G4       net (fanout=131)      4.526   M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0001_cy<15>
+    SLICE_X38Y8.Y        Tilo                  0.529   M7/float_mul_ins/S_add0000<8>
+                                                       M7/float_mul_ins/_old_e_35<8>1
+    SLICE_X36Y1.F1       net (fanout=2)        1.158   M7/float_mul_ins/_old_e_35<8>
+    SLICE_X36Y1.COUT     Topcyf                0.944   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_lut<2>1
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<2>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<3>
+    SLICE_X36Y2.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<4>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.CIN      net (fanout=1)        0.000   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<5>
+    SLICE_X36Y3.COUT     Tbyp                  0.104   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<6>
+                                                       M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X26Y37.G3      net (fanout=33)       4.124   M7/float_mul_ins/Mcompar_S_cmp_lt0000_cy<7>
+    SLICE_X26Y37.CLK     Tgck                  0.600   M7/float_mul_ins/S<21>
+                                                       M7/float_mul_ins/S_mux0000<11>11
+                                                       M7/float_mul_ins/S_20
+    -------------------------------------------------  ---------------------------
+    Total                                     17.336ns (4.835ns logic, 12.501ns route)
+                                                       (27.9% logic, 72.1% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "clk_50mhz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point M2/count_16 (SLICE_X38Y38.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.720ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M2/count_16 (FF)
+  Destination:          M2/count_16 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.720ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 20.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M2/count_16 to M2/count_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X38Y38.XQ      Tcko                  0.501   M2/count<16>
+                                                       M2/count_16
+    SLICE_X38Y38.BX      net (fanout=5)        0.465   M2/count<16>
+    SLICE_X38Y38.CLK     Tckdi       (-Th)     0.246   M2/count<16>
+                                                       M2/count_16
+    -------------------------------------------------  ---------------------------
+    Total                                      0.720ns (0.255ns logic, 0.465ns route)
+                                                       (35.4% logic, 64.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M7/float_div_ins/S_16 (SLICE_X29Y32.G4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.802ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M7/float_div_ins/m_15 (FF)
+  Destination:          M7/float_div_ins/S_16 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.802ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 20.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M7/float_div_ins/m_15 to M7/float_div_ins/S_16
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X29Y30.XQ      Tcko                  0.501   M7/float_div_ins/m<15>
+                                                       M7/float_div_ins/m_15
+    SLICE_X29Y32.G4      net (fanout=4)        0.248   M7/float_div_ins/m<15>
+    SLICE_X29Y32.CLK     Tckg        (-Th)    -0.053   M7/float_div_ins/S<17>
+                                                       M7/float_div_ins/S_mux0000<15>1
+                                                       M7/float_div_ins/S_16
+    -------------------------------------------------  ---------------------------
+    Total                                      0.802ns (0.554ns logic, 0.248ns route)
+                                                       (69.1% logic, 30.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_27 (SLICE_X19Y14.F4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.806ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_28 (FF)
+  Destination:          M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_27 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.806ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk_50mhz_BUFGP rising at 20.000ns
+  Destination Clock:    clk_50mhz_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_28 to M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_27
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X19Y13.YQ      Tcko                  0.501   M7/float_sub_ins/float_add_ins/counthigh_ins/tmp<29>
+                                                       M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_28
+    SLICE_X19Y14.F4      net (fanout=2)        0.252   M7/float_sub_ins/float_add_ins/counthigh_ins/tmp<28>
+    SLICE_X19Y14.CLK     Tckf        (-Th)    -0.053   M7/float_sub_ins/float_add_ins/counthigh_ins/tmp<27>
+                                                       M7/float_sub_ins/float_add_ins/counthigh_ins/_old_tmp_25<28>1
+                                                       M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_27
+    -------------------------------------------------  ---------------------------
+    Total                                      0.806ns (0.554ns logic, 0.252ns route)
+                                                       (68.7% logic, 31.3% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "clk_50mhz_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.634ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.683ns (Tcl)
+  Physical resource: M2/count<16>/CLK
+  Logical resource: M2/count_16/CK
+  Location pin: SLICE_X38Y38.CLK
+  Clock network: clk_50mhz_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.634ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.683ns (Tch)
+  Physical resource: M2/count<16>/CLK
+  Logical resource: M2/count_16/CK
+  Location pin: SLICE_X38Y38.CLK
+  Clock network: clk_50mhz_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.634ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.366ns (732.064MHz) (Tcp)
+  Physical resource: M2/count<16>/CLK
+  Logical resource: M2/count_16/CK
+  Location pin: SLICE_X38Y38.CLK
+  Clock network: clk_50mhz_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock clk_50mhz
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_50mhz      |   17.766|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 2021723 paths, 0 nets, and 5599 connections
+
+Design statistics:
+   Minimum period:  17.766ns{1}   (Maximum frequency:  56.287MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Tue Apr 14 15:07:43 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 110 MB
+
+
+

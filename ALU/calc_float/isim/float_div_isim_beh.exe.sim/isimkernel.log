@@ -1,0 +1,28 @@
+Command line:
+   float_div_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  60622
+
+Sun Apr 12 22:52:09 2015
+
+
+ Elaboration Time: 0.0312 sec
+
+ Current Memory Usage: 497.967 Meg
+
+ Total Signals          : 14
+ Total Nets             : 110
+ Total Signal Drivers   : 8
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 10
+ Total Traceable Variables  : 29
+ Total Scalar Nets and Variables : 480
+
+ Total Simulation Time: 0.0468 sec
+
+ Current Memory Usage: 497.967 Meg
+
+Sun Apr 12 22:52:11 2015
+

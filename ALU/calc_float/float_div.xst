@@ -1,0 +1,5 @@
+set -tmpdir "D:/3130102345/calc/xst/projnav.tmp"
+set -xsthdpdir "D:/3130102345/calc/xst"
+elaborate
+-ifn float_div.prj
+-ifmt mixed

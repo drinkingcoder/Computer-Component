@@ -1,0 +1,8 @@
+verilog work "count_digits_low.v"
+verilog work "count_digits_high.v"
+verilog work "float_add.v"
+verilog work "float_sub.v"
+verilog work "float_mul.v"
+verilog work "float_div.v"
+verilog work "float_calc.v"
+verilog work "test_float_calc.v"

@@ -1,0 +1,1382 @@
+Release 12.4 - xst M.81d (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.17 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s200-5-ft256
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "count_digits_low.v" in library work
+Compiling verilog file "count_digits_high.v" in library work
+Module <count_digits_low> compiled
+Compiling verilog file "float_add.v" in library work
+Module <count_digits_high> compiled
+Compiling verilog file "float_sub.v" in library work
+Module <float_add> compiled
+Compiling verilog file "float_mul.v" in library work
+Module <float_sub> compiled
+Compiling verilog file "float_div.v" in library work
+Module <float_mul> compiled
+Compiling verilog file "Output_2_Disp.v" in library work
+Module <float_div> compiled
+Compiling verilog file "LED_DEV.v" in library work
+Module <Output_2_Disp> compiled
+Compiling verilog file "Input.v" in library work
+Module <LED_DEV> compiled
+Compiling verilog file "float_calc.v" in library work
+Module <Input> compiled
+Compiling verilog file "Display.v" in library work
+Module <float_calc> compiled
+Compiling verilog file "counter_26bit.v" in library work
+Module <Display> compiled
+Compiling verilog file "Anti_jitter.v" in library work
+Module <counter_26bit> compiled
+Compiling verilog file "top.v" in library work
+Module <Anti_jitter> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <Anti_jitter> in library <work>.
+
+Analyzing hierarchy for module <counter_26bit> in library <work> with parameters.
+	COUNTER = "00000000000000000000000000011010"
+
+Analyzing hierarchy for module <Input> in library <work>.
+
+Analyzing hierarchy for module <Output_2_Disp> in library <work>.
+
+Analyzing hierarchy for module <Display> in library <work>.
+
+Analyzing hierarchy for module <float_calc> in library <work>.
+
+Analyzing hierarchy for module <LED_DEV> in library <work>.
+
+Analyzing hierarchy for module <float_add> in library <work>.
+
+Analyzing hierarchy for module <float_sub> in library <work>.
+
+Analyzing hierarchy for module <float_mul> in library <work>.
+
+Analyzing hierarchy for module <float_div> in library <work>.
+
+Analyzing hierarchy for module <count_digits_low> in library <work>.
+
+Analyzing hierarchy for module <count_digits_high> in library <work>.
+
+Analyzing hierarchy for module <float_add> in library <work>.
+
+Analyzing hierarchy for module <count_digits_low> in library <work>.
+
+Analyzing hierarchy for module <count_digits_high> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+WARNING:Xst:852 - "top.v" line 55: Unconnected input port 'rst' of instance 'M4' is tied to GND.
+WARNING:Xst:852 - "top.v" line 55: Unconnected input port 'EN' of instance 'M4' is tied to GND.
+WARNING:Xst:852 - "top.v" line 55: Unconnected input port 'point_in' of instance 'M4' is tied to GND.
+Module <top> is correct for synthesis.
+ 
+Analyzing module <Anti_jitter> in library <work>.
+Module <Anti_jitter> is correct for synthesis.
+ 
+Analyzing module <counter_26bit> in library <work>.
+	COUNTER = 32'sb00000000000000000000000000011010
+Module <counter_26bit> is correct for synthesis.
+ 
+Analyzing module <Input> in library <work>.
+WARNING:Xst:905 - "Input.v" line 21: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <disp_ctr>, <state>
+Module <Input> is correct for synthesis.
+ 
+Analyzing module <Output_2_Disp> in library <work>.
+Module <Output_2_Disp> is correct for synthesis.
+ 
+Analyzing module <Display> in library <work>.
+Module <Display> is correct for synthesis.
+ 
+Analyzing module <float_calc> in library <work>.
+Module <float_calc> is correct for synthesis.
+ 
+Analyzing module <float_add> in library <work>.
+WARNING:Xst:863 - "float_add.v" line 26: Name conflict (<a> and <A>, renaming a as a_rnm0).
+WARNING:Xst:863 - "float_add.v" line 27: Name conflict (<b> and <B>, renaming b as b_rnm0).
+WARNING:Xst:905 - "float_add.v" line 53: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <s1>, <s2>, <a_rnm0>, <b_rnm0>, <add_sub>, <m>
+WARNING:Xst:905 - "float_add.v" line 91: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <m>, <e>, <flag>
+Module <float_add> is correct for synthesis.
+ 
+Analyzing module <count_digits_low> in library <work>.
+Module <count_digits_low> is correct for synthesis.
+ 
+Analyzing module <count_digits_high> in library <work>.
+Module <count_digits_high> is correct for synthesis.
+ 
+Analyzing module <float_sub> in library <work>.
+Module <float_sub> is correct for synthesis.
+ 
+Analyzing module <float_mul> in library <work>.
+Module <float_mul> is correct for synthesis.
+ 
+Analyzing module <float_div> in library <work>.
+Module <float_div> is correct for synthesis.
+ 
+Analyzing module <LED_DEV> in library <work>.
+Module <LED_DEV> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Anti_jitter>.
+    Related source file is "Anti_jitter.v".
+    Found 4-bit register for signal <button_out>.
+    Found 4-bit register for signal <button_pluse>.
+    Found 8-bit register for signal <SW_OK>.
+    Found 4-bit register for signal <btn_temp>.
+    Found 32-bit up counter for signal <counter>.
+    Found 32-bit comparator less for signal <counter$cmp_lt0000> created at line 22.
+    Found 4-bit comparator not equal for signal <counter$cmp_ne0000> created at line 18.
+    Found 8-bit comparator not equal for signal <counter$cmp_ne0001> created at line 18.
+    Found 1-bit register for signal <pluse>.
+    Found 8-bit register for signal <sw_temp>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  29 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+Unit <Anti_jitter> synthesized.
+
+
+Synthesizing Unit <counter_26bit>.
+    Related source file is "counter_26bit.v".
+    Found 10-bit adder for signal <$add0000> created at line 19.
+    Found 16-bit adder for signal <$add0001> created at line 23.
+    Found 26-bit register for signal <count>.
+    Found 1-bit register for signal <second_m>.
+    Summary:
+	inferred  27 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+Unit <counter_26bit> synthesized.
+
+
+Synthesizing Unit <Input>.
+    Related source file is "Input.v".
+    Found 2-bit updown counter for signal <state>.
+    Found 64-bit register for signal <A>.
+    Found 64-bit register for signal <B>.
+    Found 4-bit adder for signal <$add0000> created at line 34.
+    Found 4-bit adder for signal <$add0001> created at line 35.
+    Found 4-bit adder for signal <$add0002> created at line 36.
+    Found 4-bit adder for signal <$add0003> created at line 37.
+    Found 4-bit adder for signal <$add0004> created at line 38.
+    Found 4-bit adder for signal <$add0005> created at line 39.
+    Found 4-bit adder for signal <$add0006> created at line 40.
+    Found 4-bit adder for signal <$add0007> created at line 41.
+    Found 4-bit adder for signal <$add0008> created at line 42.
+    Found 4-bit adder for signal <$add0009> created at line 43.
+    Found 4-bit adder for signal <$add0010> created at line 44.
+    Found 4-bit adder for signal <$add0011> created at line 45.
+    Found 4-bit adder for signal <$add0012> created at line 46.
+    Found 4-bit adder for signal <$add0013> created at line 47.
+    Found 4-bit adder for signal <$add0014> created at line 48.
+    Found 4-bit adder for signal <$add0015> created at line 49.
+    Found 4-bit adder for signal <$add0016> created at line 55.
+    Found 4-bit adder for signal <$add0017> created at line 56.
+    Found 4-bit adder for signal <$add0018> created at line 57.
+    Found 4-bit adder for signal <$add0019> created at line 58.
+    Found 4-bit adder for signal <$add0020> created at line 59.
+    Found 4-bit adder for signal <$add0021> created at line 60.
+    Found 4-bit adder for signal <$add0022> created at line 61.
+    Found 4-bit adder for signal <$add0023> created at line 62.
+    Found 4-bit adder for signal <$add0024> created at line 63.
+    Found 4-bit adder for signal <$add0025> created at line 64.
+    Found 4-bit adder for signal <$add0026> created at line 65.
+    Found 4-bit adder for signal <$add0027> created at line 66.
+    Found 4-bit adder for signal <$add0028> created at line 67.
+    Found 4-bit adder for signal <$add0029> created at line 68.
+    Found 4-bit adder for signal <$add0030> created at line 69.
+    Found 4-bit adder for signal <$add0031> created at line 70.
+    Found 5-bit comparator less for signal <blinke$cmp_lt0000> created at line 21.
+    Found 5-bit comparator lessequal for signal <state$cmp_le0000> created at line 11.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 128 D-type flip-flop(s).
+	inferred  32 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <Input> synthesized.
+
+
+Synthesizing Unit <Output_2_Disp>.
+    Related source file is "Output_2_Disp.v".
+WARNING:Xst:647 - Input <EN> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <point_in> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 4-bit register for signal <blink_out>.
+    Found 64-bit register for signal <Disp_num>.
+    Summary:
+	inferred  68 D-type flip-flop(s).
+Unit <Output_2_Disp> synthesized.
+
+
+Synthesizing Unit <Display>.
+    Related source file is "Display.v".
+WARNING:Xst:646 - Signal <digit_seg<7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32x8-bit ROM for signal <digit_seg>.
+    Found 1-of-4 decoder for signal <anode>.
+    Found 4-bit 4-to-1 multiplexer for signal <digit>.
+    Found 1-bit 4-to-1 multiplexer for signal <Dp>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Decoder(s).
+Unit <Display> synthesized.
+
+
+Synthesizing Unit <LED_DEV>.
+    Related source file is "LED_DEV.v".
+Unit <LED_DEV> synthesized.
+
+
+Synthesizing Unit <float_div>.
+    Related source file is "float_div.v".
+WARNING:Xst:646 - Signal <e2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <e1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <S>.
+    Found 1-bit register for signal <ERR>.
+    Found 1-bit register for signal <overflow>.
+    Found 32-bit register for signal <e>.
+    Found 32-bit register for signal <m>.
+    Found 32-bit register for signal <m1>.
+    Found 32-bit register for signal <m2>.
+    Found 32-bit subtractor for signal <old_e_40$addsub0000> created at line 53.
+    Found 32-bit comparator less for signal <old_e_46$cmp_lt0000> created at line 54.
+    Found 32-bit subtractor for signal <old_e_46$sub0000> created at line 54.
+    Found 32-bit subtractor for signal <old_m1_45$addsub0000> created at line 63.
+    Found 32-bit comparator greatequal for signal <old_m1_45$cmp_ge0000> created at line 60.
+    Found 32-bit adder for signal <old_m_47$addsub0000> created at line 62.
+    Found 32-bit register for signal <olda>.
+    Found 32-bit comparator not equal for signal <olda$cmp_ne0000> created at line 43.
+    Found 32-bit comparator not equal for signal <olda$cmp_ne0001> created at line 43.
+    Found 32-bit register for signal <oldb>.
+    Found 32-bit comparator less for signal <S$cmp_lt0000> created at line 75.
+    Found 32-bit 4-to-1 multiplexer for signal <S$mux0000>.
+    Found 1-bit xor2 for signal <S$xor0000> created at line 80.
+    Summary:
+	inferred 226 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred   5 Comparator(s).
+	inferred  96 Multiplexer(s).
+Unit <float_div> synthesized.
+
+
+Synthesizing Unit <count_digits_low>.
+    Related source file is "count_digits_low.v".
+    Found 32-bit register for signal <s>.
+    Found 32-bit register for signal <x>.
+    Found 32-bit comparator not equal for signal <old_x_23$cmp_ne0000> created at line 33.
+    Found 32-bit register for signal <olda>.
+    Found 32-bit adder for signal <s$addsub0000> created at line 42.
+    Summary:
+	inferred  96 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <count_digits_low> synthesized.
+
+
+Synthesizing Unit <count_digits_high>.
+    Related source file is "count_digits_high.v".
+    Found 32-bit register for signal <tmp>.
+    Found 32-bit register for signal <s>.
+    Found 1-bit register for signal <olda>.
+    Found 32-bit comparator not equal for signal <olda$cmp_ne0000> created at line 33.
+    Found 32-bit adder for signal <s$addsub0000> created at line 42.
+    Summary:
+	inferred  65 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <count_digits_high> synthesized.
+
+
+Synthesizing Unit <float_add>.
+    Related source file is "float_add.v".
+WARNING:Xst:646 - Signal <m2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <m1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <e2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <e1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <b_rnm0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <add_sub> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <a_rnm0> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:737 - Found 1-bit latch for signal <flag>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 32-bit latch for signal <e>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 32-bit latch for signal <m>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 4x2-bit ROM for signal <COND_9$rom0000>.
+    Found 32-bit 4-to-1 multiplexer for signal <e$mux0000>.
+    Found 32-bit subtractor for signal <old_m1_17$addsub0000> created at line 73.
+    Found 32-bit comparator greater for signal <old_m1_17$cmp_gt0000> created at line 66.
+    Found 32-bit shifter logical right for signal <old_m1_17$shift0001> created at line 73.
+    Found 32-bit subtractor for signal <old_m2_18$addsub0000> created at line 69.
+    Found 32-bit shifter logical right for signal <old_m2_18$shift0001> created at line 69.
+    Found 32-bit comparator greatequal for signal <old_m_20$cmp_ge0000> created at line 76.
+    Found 32-bit 4-to-1 multiplexer for signal <old_m_20$mux0000>.
+    Found 32-bit 4-to-1 multiplexer for signal <old_m_20$mux0001>.
+    Found 32-bit adder for signal <old_m_22$addsub0000> created at line 83.
+    Found 32-bit comparator greatequal for signal <overflow$cmp_ge0000> created at line 111.
+    Found 32-bit comparator greatequal for signal <overflow$cmp_ge0001> created at line 116.
+    Found 32-bit adder for signal <S$add0001> created at line 110.
+    Found 32-bit comparator greater for signal <S$cmp_gt0000> created at line 108.
+    Found 32-bit subtractor for signal <S$sub0001> created at line 115.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred   5 Comparator(s).
+	inferred 160 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <float_add> synthesized.
+
+
+Synthesizing Unit <float_mul>.
+    Related source file is "float_mul.v".
+WARNING:Xst:646 - Signal <e2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <e1> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 32-bit register for signal <e>.
+    Found 32-bit register for signal <S>.
+    Found 1-bit register for signal <overflow>.
+    Found 32-bit adder for signal <e$addsub0000> created at line 56.
+    Found 32-bit subtractor for signal <e$sub0000> created at line 56.
+    Found 32-bit register for signal <h>.
+    Found 1-bit register for signal <l>.
+    Found 32-bit register for signal <m>.
+    Found 32-bit adder for signal <m$add0000> created at line 68.
+    Found 32-bit register for signal <m1>.
+    Found 32-bit register for signal <m2>.
+    Found 32-bit adder for signal <old_h_33$addsub0000> created at line 65.
+    Found 32-bit comparator not equal for signal <old_l_34$cmp_ne0000> created at line 48.
+    Found 32-bit comparator not equal for signal <old_l_34$cmp_ne0001> created at line 48.
+    Found 32-bit register for signal <olda>.
+    Found 32-bit register for signal <oldb>.
+    Found 32-bit comparator greatequal for signal <overflow$cmp_ge0000> created at line 73.
+    Found 32-bit adder for signal <S$add0000> created at line 77.
+    Found 32-bit comparator less for signal <S$cmp_lt0000> created at line 73.
+    Found 1-bit xor2 for signal <S$xor0000> created at line 77.
+    Summary:
+	inferred 258 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+	inferred  32 Multiplexer(s).
+Unit <float_mul> synthesized.
+
+
+Synthesizing Unit <float_sub>.
+    Related source file is "float_sub.v".
+Unit <float_sub> synthesized.
+
+
+Synthesizing Unit <float_calc>.
+    Related source file is "float_calc.v".
+Unit <float_calc> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+WARNING:Xst:653 - Signal <xor_> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <or_> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <not_> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <loopright> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <loopleft> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <logicright> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <logicleft> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <intsub> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <intmul> is used but never assigned. This sourceless signal will be automatically connected to value 0000000000000000000000000000000000000000000000000000000000000000.
+WARNING:Xst:653 - Signal <intdiv> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <intadd> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:646 - Signal <count_out<25>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <count_out<23:20>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <count_out<17:0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <button_out<3>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <arithright> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:653 - Signal <and_> is used but never assigned. This sourceless signal will be automatically connected to value 00000000000000000000000000000000.
+WARNING:Xst:646 - Signal <SW_OK> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 32x8-bit ROM                                          : 1
+ 4x2-bit ROM                                           : 2
+# Adders/Subtractors                                   : 61
+ 10-bit adder                                          : 1
+ 16-bit adder                                          : 1
+ 32-bit adder                                          : 15
+ 32-bit addsub                                         : 2
+ 32-bit subtractor                                     : 10
+ 4-bit adder                                           : 32
+# Counters                                             : 2
+ 2-bit updown counter                                  : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 197
+ 1-bit register                                        : 163
+ 32-bit register                                       : 27
+ 4-bit register                                        : 4
+ 64-bit register                                       : 1
+ 8-bit register                                        : 2
+# Latches                                              : 6
+ 1-bit latch                                           : 2
+ 32-bit latch                                          : 4
+# Comparators                                          : 29
+ 32-bit comparator greatequal                          : 8
+ 32-bit comparator greater                             : 4
+ 32-bit comparator less                                : 4
+ 32-bit comparator not equal                           : 9
+ 4-bit comparator not equal                            : 1
+ 5-bit comparator less                                 : 1
+ 5-bit comparator lessequal                            : 1
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 16
+ 1-bit 4-to-1 multiplexer                              : 1
+ 32-bit 4-to-1 multiplexer                             : 14
+ 4-bit 4-to-1 multiplexer                              : 1
+# Logic shifters                                       : 4
+ 32-bit shifter logical right                          : 4
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <olda_15> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_15> 
+INFO:Xst:2261 - The FF/Latch <olda_20> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_20> 
+INFO:Xst:2261 - The FF/Latch <olda_16> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_16> 
+INFO:Xst:2261 - The FF/Latch <olda_21> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_21> 
+INFO:Xst:2261 - The FF/Latch <olda_17> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_17> 
+INFO:Xst:2261 - The FF/Latch <olda_22> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_22> 
+INFO:Xst:2261 - The FF/Latch <olda_18> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_18> 
+INFO:Xst:2261 - The FF/Latch <olda_19> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_19> 
+INFO:Xst:2261 - The FF/Latch <m1_24> in Unit <float_mul_ins> is equivalent to the following 7 FFs/Latches, which will be removed : <m1_25> <m1_26> <m1_27> <m1_28> <m1_29> <m1_30> <m1_31> 
+INFO:Xst:2261 - The FF/Latch <olda_0> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_0> 
+INFO:Xst:2261 - The FF/Latch <olda_1> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_1> 
+INFO:Xst:2261 - The FF/Latch <olda_2> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_2> 
+INFO:Xst:2261 - The FF/Latch <olda_3> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_3> 
+INFO:Xst:2261 - The FF/Latch <olda_4> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_4> 
+INFO:Xst:2261 - The FF/Latch <olda_10> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_10> 
+INFO:Xst:2261 - The FF/Latch <olda_5> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_5> 
+INFO:Xst:2261 - The FF/Latch <olda_11> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_11> 
+INFO:Xst:2261 - The FF/Latch <olda_6> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_6> 
+INFO:Xst:2261 - The FF/Latch <olda_12> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_12> 
+INFO:Xst:2261 - The FF/Latch <olda_7> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_7> 
+INFO:Xst:2261 - The FF/Latch <olda_13> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_13> 
+INFO:Xst:2261 - The FF/Latch <olda_8> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_8> 
+INFO:Xst:2261 - The FF/Latch <olda_14> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_14> 
+INFO:Xst:2261 - The FF/Latch <olda_9> in Unit <float_mul_ins> is equivalent to the following FF/Latch, which will be removed : <m1_9> 
+INFO:Xst:2261 - The FF/Latch <oldb_10> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_10> 
+INFO:Xst:2261 - The FF/Latch <oldb_11> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_11> 
+INFO:Xst:2261 - The FF/Latch <oldb_12> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_12> 
+INFO:Xst:2261 - The FF/Latch <oldb_13> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_13> 
+INFO:Xst:2261 - The FF/Latch <oldb_14> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_14> 
+INFO:Xst:2261 - The FF/Latch <m2_24> in Unit <float_div_ins> is equivalent to the following 7 FFs/Latches, which will be removed : <m2_25> <m2_26> <m2_27> <m2_28> <m2_29> <m2_30> <m2_31> 
+INFO:Xst:2261 - The FF/Latch <oldb_15> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_15> 
+INFO:Xst:2261 - The FF/Latch <oldb_20> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_20> 
+INFO:Xst:2261 - The FF/Latch <oldb_16> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_16> 
+INFO:Xst:2261 - The FF/Latch <oldb_21> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_21> 
+INFO:Xst:2261 - The FF/Latch <oldb_17> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_17> 
+INFO:Xst:2261 - The FF/Latch <oldb_22> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_22> 
+INFO:Xst:2261 - The FF/Latch <oldb_18> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_18> 
+INFO:Xst:2261 - The FF/Latch <oldb_19> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_19> 
+INFO:Xst:2261 - The FF/Latch <oldb_0> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_0> 
+INFO:Xst:2261 - The FF/Latch <oldb_1> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_1> 
+INFO:Xst:2261 - The FF/Latch <oldb_2> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_2> 
+INFO:Xst:2261 - The FF/Latch <oldb_3> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_3> 
+INFO:Xst:2261 - The FF/Latch <oldb_4> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_4> 
+INFO:Xst:2261 - The FF/Latch <oldb_5> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_5> 
+INFO:Xst:2261 - The FF/Latch <oldb_6> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_6> 
+INFO:Xst:2261 - The FF/Latch <oldb_7> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_7> 
+INFO:Xst:2261 - The FF/Latch <oldb_8> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_8> 
+INFO:Xst:2261 - The FF/Latch <oldb_9> in Unit <float_div_ins> is equivalent to the following FF/Latch, which will be removed : <m2_9> 
+WARNING:Xst:1710 - FF/Latch <m1_23> (without init value) has a constant value of 1 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m1_24> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_23> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_24> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_25> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_26> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_27> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_28> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_29> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_30> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_31> (without init value) has a constant value of 0 in block <float_mul_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_23> (without init value) has a constant value of 1 in block <float_div_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m2_24> (without init value) has a constant value of 0 in block <float_div_ins>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <button_out_3> of sequential type is unconnected in block <M1>.
+WARNING:Xst:2677 - Node <x_24> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_25> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_26> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_27> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_28> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_29> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_30> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_31> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_24> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_25> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_26> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_27> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_28> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_29> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_30> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2677 - Node <x_31> of sequential type is unconnected in block <countlow_ins>.
+WARNING:Xst:2404 -  FFs/Latches <m2<31:24>> (without init value) have a constant value of 0 in block <float_div>.
+WARNING:Xst:2404 -  FFs/Latches <m2<31:31>> (without init value) have a constant value of 0 in block <float_mul>.
+WARNING:Xst:2404 -  FFs/Latches <m1<31:24>> (without init value) have a constant value of 0 in block <float_mul>.
+WARNING:Xst:2404 -  FFs/Latches <m2<30:30>> (without init value) have a constant value of 0 in block <float_mul>.
+WARNING:Xst:2404 -  FFs/Latches <m2<29:29>> (without init value) have a constant value of 0 in block <float_mul>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 3
+ 32x8-bit ROM                                          : 1
+ 4x2-bit ROM                                           : 2
+# Adders/Subtractors                                   : 59
+ 10-bit adder                                          : 1
+ 16-bit adder                                          : 1
+ 31-bit subtractor                                     : 1
+ 32-bit adder                                          : 12
+ 32-bit addsub                                         : 2
+ 32-bit subtractor                                     : 9
+ 4-bit adder                                           : 32
+ 9-bit adder                                           : 1
+# Counters                                             : 2
+ 2-bit updown counter                                  : 1
+ 32-bit up counter                                     : 1
+# Registers                                            : 1104
+ Flip-Flops                                            : 1104
+# Latches                                              : 6
+ 1-bit latch                                           : 2
+ 32-bit latch                                          : 4
+# Comparators                                          : 29
+ 32-bit comparator greatequal                          : 8
+ 32-bit comparator greater                             : 4
+ 32-bit comparator less                                : 4
+ 32-bit comparator not equal                           : 9
+ 4-bit comparator not equal                            : 1
+ 5-bit comparator less                                 : 1
+ 5-bit comparator lessequal                            : 1
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 47
+ 1-bit 4-to-1 multiplexer                              : 33
+ 32-bit 4-to-1 multiplexer                             : 13
+ 4-bit 4-to-1 multiplexer                              : 1
+# Logic shifters                                       : 4
+ 32-bit shifter logical right                          : 4
+# Decoders                                             : 1
+ 1-of-4 decoder                                        : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <m2_23> (without init value) has a constant value of 1 in block <float_div>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <m1_23> (without init value) has a constant value of 1 in block <float_mul>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m2_23> (without init value) has a constant value of 0 in block <float_mul>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m2_24> (without init value) has a constant value of 0 in block <float_mul>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m2_25> (without init value) has a constant value of 0 in block <float_mul>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m2_26> (without init value) has a constant value of 0 in block <float_mul>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m2_27> (without init value) has a constant value of 0 in block <float_mul>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <m2_28> (without init value) has a constant value of 0 in block <float_mul>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <oldb_10> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_10> 
+INFO:Xst:2261 - The FF/Latch <oldb_11> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_11> 
+INFO:Xst:2261 - The FF/Latch <oldb_12> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_12> 
+INFO:Xst:2261 - The FF/Latch <oldb_13> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_13> 
+INFO:Xst:2261 - The FF/Latch <oldb_14> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_14> 
+INFO:Xst:2261 - The FF/Latch <oldb_15> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_15> 
+INFO:Xst:2261 - The FF/Latch <oldb_20> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_20> 
+INFO:Xst:2261 - The FF/Latch <oldb_16> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_16> 
+INFO:Xst:2261 - The FF/Latch <oldb_21> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_21> 
+INFO:Xst:2261 - The FF/Latch <oldb_17> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_17> 
+INFO:Xst:2261 - The FF/Latch <oldb_22> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_22> 
+INFO:Xst:2261 - The FF/Latch <oldb_18> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_18> 
+INFO:Xst:2261 - The FF/Latch <oldb_19> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_19> 
+INFO:Xst:2261 - The FF/Latch <oldb_0> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_0> 
+INFO:Xst:2261 - The FF/Latch <oldb_1> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_1> 
+INFO:Xst:2261 - The FF/Latch <oldb_2> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_2> 
+INFO:Xst:2261 - The FF/Latch <oldb_3> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_3> 
+INFO:Xst:2261 - The FF/Latch <oldb_4> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_4> 
+INFO:Xst:2261 - The FF/Latch <oldb_5> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_5> 
+INFO:Xst:2261 - The FF/Latch <oldb_6> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_6> 
+INFO:Xst:2261 - The FF/Latch <oldb_7> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_7> 
+INFO:Xst:2261 - The FF/Latch <oldb_8> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_8> 
+INFO:Xst:2261 - The FF/Latch <oldb_9> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <m2_9> 
+INFO:Xst:2261 - The FF/Latch <olda_15> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_15> 
+INFO:Xst:2261 - The FF/Latch <olda_20> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_20> 
+INFO:Xst:2261 - The FF/Latch <olda_16> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_16> 
+INFO:Xst:2261 - The FF/Latch <olda_21> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_21> 
+INFO:Xst:2261 - The FF/Latch <olda_17> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_17> 
+INFO:Xst:2261 - The FF/Latch <olda_22> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_22> 
+INFO:Xst:2261 - The FF/Latch <olda_18> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_18> 
+INFO:Xst:2261 - The FF/Latch <olda_19> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_19> 
+INFO:Xst:2261 - The FF/Latch <olda_0> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_0> 
+INFO:Xst:2261 - The FF/Latch <olda_1> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_1> 
+INFO:Xst:2261 - The FF/Latch <olda_2> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_2> 
+INFO:Xst:2261 - The FF/Latch <olda_3> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_3> 
+INFO:Xst:2261 - The FF/Latch <olda_4> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_4> 
+INFO:Xst:2261 - The FF/Latch <olda_10> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_10> 
+INFO:Xst:2261 - The FF/Latch <olda_5> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_5> 
+INFO:Xst:2261 - The FF/Latch <olda_11> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_11> 
+INFO:Xst:2261 - The FF/Latch <olda_6> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_6> 
+INFO:Xst:2261 - The FF/Latch <olda_12> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_12> 
+INFO:Xst:2261 - The FF/Latch <olda_7> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_7> 
+INFO:Xst:2261 - The FF/Latch <olda_13> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_13> 
+INFO:Xst:2261 - The FF/Latch <olda_8> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_8> 
+INFO:Xst:2261 - The FF/Latch <olda_14> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_14> 
+INFO:Xst:2261 - The FF/Latch <olda_9> in Unit <float_mul> is equivalent to the following FF/Latch, which will be removed : <m1_9> 
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_sub_ins/float_add_ins/countlow_ins/x_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_add_ins/countlow_ins/x_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <m_24> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <m_25> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <m_26> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <m_27> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <m_28> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <m_29> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <m_30> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <m_31> of sequential type is unconnected in block <float_div>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_31> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_30> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_29> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_28> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_27> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_26> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_mul_ins/counthigh_ins/s_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_8> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_9> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_10> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_11> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_12> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_13> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_14> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_15> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_16> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_17> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_18> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_19> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_20> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_21> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_22> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_23> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_24> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_25> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_26> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_27> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_28> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_29> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_30> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_add_ins/e_31> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_8> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_9> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_10> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_11> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_12> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_13> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_14> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_15> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_16> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_17> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_18> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_19> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_20> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_21> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_22> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_23> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_24> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_25> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_26> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_27> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_28> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_29> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_30> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <M7/float_sub_ins/float_add_ins/e_31> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <e_11> in Unit <float_div> is equivalent to the following 20 FFs/Latches, which will be removed : <e_12> <e_13> <e_14> <e_15> <e_16> <e_17> <e_18> <e_19> <e_20> <e_21> <e_22> <e_23> <e_24> <e_25> <e_26> <e_27> <e_28> <e_29> <e_30> <e_31> 
+INFO:Xst:2261 - The FF/Latch <M7/float_add_ins/m_25> in Unit <top> is equivalent to the following 6 FFs/Latches, which will be removed : <M7/float_add_ins/m_26> <M7/float_add_ins/m_27> <M7/float_add_ins/m_28> <M7/float_add_ins/m_29> <M7/float_add_ins/m_30> <M7/float_add_ins/m_31> 
+INFO:Xst:2261 - The FF/Latch <M7/float_mul_ins/e_9> in Unit <top> is equivalent to the following 22 FFs/Latches, which will be removed : <M7/float_mul_ins/e_10> <M7/float_mul_ins/e_11> <M7/float_mul_ins/e_12> <M7/float_mul_ins/e_13> <M7/float_mul_ins/e_14> <M7/float_mul_ins/e_15> <M7/float_mul_ins/e_16> <M7/float_mul_ins/e_17> <M7/float_mul_ins/e_18> <M7/float_mul_ins/e_19> <M7/float_mul_ins/e_20> <M7/float_mul_ins/e_21> <M7/float_mul_ins/e_22> <M7/float_mul_ins/e_23> <M7/float_mul_ins/e_24> <M7/float_mul_ins/e_25> <M7/float_mul_ins/e_26> <M7/float_mul_ins/e_27> <M7/float_mul_ins/e_28> <M7/float_mul_ins/e_29> <M7/float_mul_ins/e_30> <M7/float_mul_ins/e_31> 
+INFO:Xst:2261 - The FF/Latch <M7/float_sub_ins/float_add_ins/m_25> in Unit <top> is equivalent to the following 6 FFs/Latches, which will be removed : <M7/float_sub_ins/float_add_ins/m_26> <M7/float_sub_ins/float_add_ins/m_27> <M7/float_sub_ins/float_add_ins/m_28> <M7/float_sub_ins/float_add_ins/m_29> <M7/float_sub_ins/float_add_ins/m_30> <M7/float_sub_ins/float_add_ins/m_31> 
+INFO:Xst:2261 - The FF/Latch <M7/float_add_ins/countlow_ins/olda_31> in Unit <top> is equivalent to the following 6 FFs/Latches, which will be removed : <M7/float_add_ins/countlow_ins/olda_30> <M7/float_add_ins/countlow_ins/olda_29> <M7/float_add_ins/countlow_ins/olda_28> <M7/float_add_ins/countlow_ins/olda_27> <M7/float_add_ins/countlow_ins/olda_26> <M7/float_add_ins/countlow_ins/olda_25> 
+INFO:Xst:2261 - The FF/Latch <M7/float_sub_ins/float_add_ins/countlow_ins/olda_25> in Unit <top> is equivalent to the following 6 FFs/Latches, which will be removed : <M7/float_sub_ins/float_add_ins/countlow_ins/olda_26> <M7/float_sub_ins/float_add_ins/countlow_ins/olda_27> <M7/float_sub_ins/float_add_ins/countlow_ins/olda_28> <M7/float_sub_ins/float_add_ins/countlow_ins/olda_29> <M7/float_sub_ins/float_add_ins/countlow_ins/olda_30> <M7/float_sub_ins/float_add_ins/countlow_ins/olda_31> 
+
+Optimizing unit <top> ...
+WARNING:Xst:1710 - FF/Latch <M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <M7/float_mul_ins/counthigh_ins/tmp_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <M7/float_add_ins/counthigh_ins/tmp_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <M7/float_sub_ins/float_add_ins/counthigh_ins/tmp_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <M7/float_mul_ins/counthigh_ins/tmp_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <M7/float_add_ins/counthigh_ins/tmp_31> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <Anti_jitter> ...
+
+Optimizing unit <counter_26bit> ...
+
+Optimizing unit <Input> ...
+
+Optimizing unit <Output_2_Disp> ...
+
+Optimizing unit <Display> ...
+
+Optimizing unit <float_div> ...
+WARNING:Xst:1710 - FF/Latch <m1_0> (without init value) has a constant value of 0 in block <float_div>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <e_10> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <e_11> 
+WARNING:Xst:1710 - FF/Latch <m1_0> (without init value) has a constant value of 0 in block <float_div>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <e_10> in Unit <float_div> is equivalent to the following FF/Latch, which will be removed : <e_11> 
+WARNING:Xst:2677 - Node <M1/SW_OK_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/SW_OK_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/SW_OK_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/SW_OK_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/SW_OK_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/SW_OK_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/SW_OK_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/SW_OK_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/button_pluse_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/button_pluse_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/button_pluse_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/button_pluse_0> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/button_out_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M1/pluse> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M2/count_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M2/second_m> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <M7/float_div_ins/ERR> of sequential type is unconnected in block <top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 99.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 961
+ Flip-Flops                                            : 961
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 33
+
+Cell Usage :
+# BELS                             : 4919
+#      GND                         : 1
+#      INV                         : 94
+#      LUT1                        : 96
+#      LUT2                        : 465
+#      LUT3                        : 830
+#      LUT3_D                      : 10
+#      LUT4                        : 1751
+#      LUT4_D                      : 19
+#      LUT4_L                      : 24
+#      MULT_AND                    : 23
+#      MUXCY                       : 899
+#      MUXF5                       : 180
+#      VCC                         : 1
+#      XORCY                       : 526
+# FlipFlops/Latches                : 1031
+#      FD                          : 440
+#      FDE                         : 346
+#      FDR                         : 66
+#      FDRE                        : 32
+#      FDRS                        : 1
+#      FDS                         : 76
+#      LDE                         : 70
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 32
+#      IBUF                        : 12
+#      OBUF                        : 20
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-5 
+
+ Number of Slices:                     1751  out of   1920    91%  
+ Number of Slice Flip Flops:           1031  out of   3840    26%  
+ Number of 4 input LUTs:               3289  out of   3840    85%  
+ Number of IOs:                          33
+ Number of bonded IOBs:                  33  out of    173    19%  
+ Number of GCLKs:                         3  out of      8    37%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+---------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+Clock Signal                                                                                       | Clock buffer(FF name)                       | Load  |
+---------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+clk_50mhz                                                                                          | BUFGP                                       | 831   |
+M7/float_sub_ins/float_add_ins/flag_not0000(M7/float_sub_ins/float_add_ins/flag_not0000_wg_cy<7>:O)| NONE(*)(M7/float_sub_ins/float_add_ins/flag)| 1     |
+M7/float_add_ins/flag_not0000(M7/float_add_ins/flag_not0000_wg_cy<7>:O)                            | NONE(*)(M7/float_add_ins/flag)              | 1     |
+M7/float_add_ins/flag_not00011(M7/float_add_ins/flag_not0001_wg_cy<7>:O)                           | BUFG(*)(M7/float_sub_ins/float_add_ins/m_0) | 68    |
+M1/button_out_0                                                                                    | NONE(M3/state_1)                            | 2     |
+M1/button_out_21                                                                                   | BUFG                                        | 128   |
+---------------------------------------------------------------------------------------------------+---------------------------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 15.584ns (Maximum Frequency: 64.168MHz)
+   Minimum input arrival time before clock: 8.671ns
+   Maximum output required time after clock: 16.932ns
+   Maximum combinational path delay: 12.321ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_50mhz'
+  Clock period: 15.584ns (frequency: 64.168MHz)
+  Total number of paths / destination ports: 2021723 / 1010
+-------------------------------------------------------------------------
+Delay:               15.584ns (Levels of Logic = 50)
+  Source:            M7/float_mul_ins/olda_1 (FF)
+  Destination:       M7/float_mul_ins/m_31 (FF)
+  Source Clock:      clk_50mhz rising
+  Destination Clock: clk_50mhz rising
+
+  Data Path: M7/float_mul_ins/olda_1 to M7/float_mul_ins/m_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              2   0.626   0.804  M7/float_mul_ins/olda_1 (M7/float_mul_ins/olda_1)
+     LUT4:I2->O            1   0.479   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_lut<0> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<0> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<1> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<2> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<3> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<4> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<5> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<6> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<7> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<8> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<9> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<10> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<11> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<11>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<12> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<12>)
+     MUXCY:CI->O           1   0.264   0.851  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<13> (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<13>)
+     LUT3_D:I1->O        130   0.479   2.222  M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<15>1 (M7/float_mul_ins/Mcompar_old_l_34_cmp_ne0000_cy<15>)
+     LUT2:I1->O           20   0.479   1.372  M7/float_mul_ins/_old_h_30<10>11_2 (M7/float_mul_ins/_old_h_30<10>11_1)
+     LUT3:I2->O            1   0.479   0.000  M7/float_mul_ins/Madd_old_h_33_addsub0000_lut<3> (M7/float_mul_ins/Madd_old_h_33_addsub0000_lut<3>)
+     MUXCY:S->O            1   0.435   0.000  M7/float_mul_ins/Madd_old_h_33_addsub0000_cy<3> (M7/float_mul_ins/Madd_old_h_33_addsub0000_cy<3>)
+     XORCY:CI->O           1   0.786   0.704  M7/float_mul_ins/Madd_old_h_33_addsub0000_xor<4> (M7/float_mul_ins/old_h_33_addsub0000<4>)
+     LUT4_D:I3->O          1   0.479   0.704  M7/float_mul_ins/Mmux__old_h_335320 (M7/float_mul_ins/Mmux__old_h_335320)
+     LUT4:I3->O            1   0.479   0.000  M7/float_mul_ins/Mmux__old_h_3353321 (M7/float_mul_ins/Mmux__old_h_335332)
+     MUXCY:S->O            1   0.435   0.000  M7/float_mul_ins/Madd_m_add0000_cy<4> (M7/float_mul_ins/Madd_m_add0000_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<5> (M7/float_mul_ins/Madd_m_add0000_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<6> (M7/float_mul_ins/Madd_m_add0000_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<7> (M7/float_mul_ins/Madd_m_add0000_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<8> (M7/float_mul_ins/Madd_m_add0000_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<9> (M7/float_mul_ins/Madd_m_add0000_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<10> (M7/float_mul_ins/Madd_m_add0000_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<11> (M7/float_mul_ins/Madd_m_add0000_cy<11>)
+     MUXCY:CI->O           1   0.055   0.000  M7/float_mul_ins/Madd_m_add0000_cy<12> (M7/float_mul_ins/Madd_m_add0000_cy<12>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<13> (M7/float_mul_ins/Madd_m_add0000_cy<13>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<14> (M7/float_mul_ins/Madd_m_add0000_cy<14>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<15> (M7/float_mul_ins/Madd_m_add0000_cy<15>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<16> (M7/float_mul_ins/Madd_m_add0000_cy<16>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<17> (M7/float_mul_ins/Madd_m_add0000_cy<17>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<18> (M7/float_mul_ins/Madd_m_add0000_cy<18>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<19> (M7/float_mul_ins/Madd_m_add0000_cy<19>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<20> (M7/float_mul_ins/Madd_m_add0000_cy<20>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<21> (M7/float_mul_ins/Madd_m_add0000_cy<21>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<22> (M7/float_mul_ins/Madd_m_add0000_cy<22>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<23> (M7/float_mul_ins/Madd_m_add0000_cy<23>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<24> (M7/float_mul_ins/Madd_m_add0000_cy<24>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<25> (M7/float_mul_ins/Madd_m_add0000_cy<25>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<26> (M7/float_mul_ins/Madd_m_add0000_cy<26>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<27> (M7/float_mul_ins/Madd_m_add0000_cy<27>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<28> (M7/float_mul_ins/Madd_m_add0000_cy<28>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<29> (M7/float_mul_ins/Madd_m_add0000_cy<29>)
+     MUXCY:CI->O           0   0.056   0.000  M7/float_mul_ins/Madd_m_add0000_cy<30> (M7/float_mul_ins/Madd_m_add0000_cy<30>)
+     XORCY:CI->O           1   0.786   0.000  M7/float_mul_ins/Madd_m_add0000_xor<31> (M7/float_mul_ins/m_add0000<31>)
+     FD:D                      0.176          M7/float_mul_ins/m_31
+    ----------------------------------------
+    Total                     15.584ns (8.927ns logic, 6.658ns route)
+                                       (57.3% logic, 42.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'M1/button_out_0'
+  Clock period: 3.566ns (frequency: 280.411MHz)
+  Total number of paths / destination ports: 3 / 2
+-------------------------------------------------------------------------
+Delay:               3.566ns (Levels of Logic = 1)
+  Source:            M3/state_0 (FF)
+  Destination:       M3/state_0 (FF)
+  Source Clock:      M1/button_out_0 rising
+  Destination Clock: M1/button_out_0 rising
+
+  Data Path: M3/state_0 to M3/state_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             38   0.626   1.604  M3/state_0 (M3/state_0)
+     INV:I->O              1   0.479   0.681  M3/Result<0>1_INV_0 (M3/Result<0>)
+     FDE:D                     0.176          M3/state_0
+    ----------------------------------------
+    Total                      3.566ns (1.281ns logic, 2.285ns route)
+                                       (35.9% logic, 64.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'M1/button_out_21'
+  Clock period: 4.032ns (frequency: 247.988MHz)
+  Total number of paths / destination ports: 320 / 128
+-------------------------------------------------------------------------
+Delay:               4.032ns (Levels of Logic = 1)
+  Source:            M3/B_31 (FF)
+  Destination:       M3/B_31 (FF)
+  Source Clock:      M1/button_out_21 rising
+  Destination Clock: M1/button_out_21 rising
+
+  Data Path: M3/B_31 to M3/B_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q            213   0.626   2.751  M3/B_31 (M3/B_31)
+     LUT4:I0->O            1   0.479   0.000  M3/Madd__add0023_xor<3>11 (M3/_add0023<3>)
+     FDE:D                     0.176          M3/B_31
+    ----------------------------------------
+    Total                      4.032ns (1.281ns logic, 2.751ns route)
+                                       (31.8% logic, 68.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_50mhz'
+  Total number of paths / destination ports: 1751 / 154
+-------------------------------------------------------------------------
+Offset:              8.671ns (Levels of Logic = 4)
+  Source:            SW<3> (PAD)
+  Destination:       M1/counter_31 (FF)
+  Destination Clock: clk_50mhz rising
+
+  Data Path: SW<3> to M1/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           163   0.715   2.272  SW_3_IBUF (SW_3_IBUF)
+     LUT4:I2->O            1   0.479   0.976  M1/counter_cmp_ne000132 (M1/counter_cmp_ne000132)
+     LUT4:I0->O            2   0.479   0.804  M1/counter_cmp_ne0001164 (M1/counter_cmp_ne0001)
+     LUT3:I2->O           32   0.479   1.575  M1/counter_or00001 (M1/counter_not0001_inv)
+     FDRE:R                    0.892          M1/counter_0
+    ----------------------------------------
+    Total                      8.671ns (3.044ns logic, 5.627ns route)
+                                       (35.1% logic, 64.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'M1/button_out_0'
+  Total number of paths / destination ports: 8 / 2
+-------------------------------------------------------------------------
+Offset:              3.665ns (Levels of Logic = 2)
+  Source:            SW<5> (PAD)
+  Destination:       M3/state_1 (FF)
+  Destination Clock: M1/button_out_0 rising
+
+  Data Path: SW<5> to M3/state_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   0.715   1.201  SW_5_IBUF (SW_5_IBUF)
+     LUT4:I0->O            2   0.479   0.745  M3/blinke_cmp_lt00001 (M3/blinke_cmp_lt0000)
+     FDE:CE                    0.524          M3/state_0
+    ----------------------------------------
+    Total                      3.665ns (1.718ns logic, 1.947ns route)
+                                       (46.9% logic, 53.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'M1/button_out_21'
+  Total number of paths / destination ports: 896 / 128
+-------------------------------------------------------------------------
+Offset:              8.112ns (Levels of Logic = 4)
+  Source:            SW<4> (PAD)
+  Destination:       M3/B_27 (FF)
+  Destination Clock: M1/button_out_21 rising
+
+  Data Path: SW<4> to M3/B_27
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   0.715   1.201  SW_4_IBUF (SW_4_IBUF)
+     LUT4:I0->O          108   0.479   2.240  M4/blink_out_and0000_inv1 (M3/A_11_not0001_bdd8)
+     LUT3:I0->O            8   0.479   1.216  M3/A_19_not000141 (M3/A_19_not0001_bdd4)
+     LUT4:I0->O            4   0.479   0.779  M3/B_19_not000111 (M3/B_19_not0001)
+     FDE:CE                    0.524          M3/B_16
+    ----------------------------------------
+    Total                      8.112ns (2.676ns logic, 5.436ns route)
+                                       (33.0% logic, 67.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_50mhz'
+  Total number of paths / destination ports: 2726 / 15
+-------------------------------------------------------------------------
+Offset:              14.856ns (Levels of Logic = 35)
+  Source:            M7/float_sub_ins/float_add_ins/countlow_ins/s_0 (FF)
+  Destination:       LED<1> (PAD)
+  Source Clock:      clk_50mhz rising
+
+  Data Path: M7/float_sub_ins/float_add_ins/countlow_ins/s_0 to LED<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.626   0.941  M7/float_sub_ins/float_add_ins/countlow_ins/s_0 (M7/float_sub_ins/float_add_ins/countlow_ins/s_0)
+     LUT2:I1->O            1   0.479   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_lut<0> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<0> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<1> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<2> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<3> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<4> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<5> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<6> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<7> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<8> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<9> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<10> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<11> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<11>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<12> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<12>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<13> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<13>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<14> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<14>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<15> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<15>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<16> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<16>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<17> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<17>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<18> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<18>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<19> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<19>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<20> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<20>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<21> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<21>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<22> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<22>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<23> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<23>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<24> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<24>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<25> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<25>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<26> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<26>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<27> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<27>)
+     XORCY:CI->O           1   0.786   0.976  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_xor<28> (M7/float_sub_ins/float_add_ins/S_sub0001<28>)
+     LUT4:I0->O            1   0.479   0.000  M7/float_sub_ins/float_add_ins/Mcompar_overflow_cmp_ge0001_lut<7> (M7/float_sub_ins/float_add_ins/Mcompar_overflow_cmp_ge0001_lut<7>)
+     MUXCY:S->O            1   0.644   0.740  M7/float_sub_ins/float_add_ins/Mcompar_overflow_cmp_ge0001_cy<7> (M7/float_sub_ins/float_add_ins/overflow_cmp_ge0001)
+     LUT4:I2->O            1   0.479   0.704  M7/float_sub_ins/float_add_ins/overflow_SW0 (N963)
+     LUT4:I3->O            1   0.479   0.681  M7/float_sub_ins/float_add_ins/overflow (overfloat<1>)
+     OBUF:I->O                 4.909          LED_1_OBUF (LED<1>)
+    ----------------------------------------
+    Total                     14.856ns (10.814ns logic, 4.041ns route)
+                                       (72.8% logic, 27.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'M1/button_out_21'
+  Total number of paths / destination ports: 160 / 2
+-------------------------------------------------------------------------
+Offset:              16.932ns (Levels of Logic = 14)
+  Source:            M3/B_21 (FF)
+  Destination:       LED<0> (PAD)
+  Source Clock:      M1/button_out_21 rising
+
+  Data Path: M3/B_21 to LED<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             20   0.626   1.608  M3/B_21 (M3/B_21)
+     LUT3:I0->O            1   0.479   0.000  M7/float_add_ins/S_cmp_eq00031_wg_lut<0> (M7/float_add_ins/S_cmp_eq00031_wg_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  M7/float_add_ins/S_cmp_eq00031_wg_cy<0> (M7/float_add_ins/S_cmp_eq00031_wg_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_add_ins/S_cmp_eq00031_wg_cy<1> (M7/float_add_ins/S_cmp_eq00031_wg_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_add_ins/S_cmp_eq00031_wg_cy<2> (M7/float_add_ins/S_cmp_eq00031_wg_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_add_ins/S_cmp_eq00031_wg_cy<3> (M7/float_add_ins/S_cmp_eq00031_wg_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_add_ins/S_cmp_eq00031_wg_cy<4> (M7/float_add_ins/S_cmp_eq00031_wg_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_add_ins/S_cmp_eq00031_wg_cy<5> (M7/float_add_ins/S_cmp_eq00031_wg_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_add_ins/S_cmp_eq00031_wg_cy<6> (M7/float_add_ins/S_cmp_eq00031_wg_cy<6>)
+     MUXCY:CI->O          21   0.264   1.458  M7/float_add_ins/S_cmp_eq00031_wg_cy<7> (M7/float_add_ins/S_cmp_eq00031_wg_cy<7>)
+     LUT2:I1->O           33   0.479   1.639  M7/float_add_ins/S_cmp_eq00031 (M7/float_add_ins/S_cmp_eq0003)
+     LUT4:I2->O           34   0.479   1.880  M7/float_add_ins/S<31>299 (N74)
+     LUT4:I0->O            1   0.479   0.704  M7/float_add_ins/overflow_SW0 (N965)
+     LUT4:I3->O            1   0.479   0.681  M7/float_add_ins/overflow (overfloat<0>)
+     OBUF:I->O                 4.909          LED_0_OBUF (LED<0>)
+    ----------------------------------------
+    Total                     16.932ns (8.962ns logic, 7.970ns route)
+                                       (52.9% logic, 47.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'M7/float_add_ins/flag_not00011'
+  Total number of paths / destination ports: 1844 / 2
+-------------------------------------------------------------------------
+Offset:              14.880ns (Levels of Logic = 35)
+  Source:            M7/float_sub_ins/float_add_ins/e_0 (LATCH)
+  Destination:       LED<1> (PAD)
+  Source Clock:      M7/float_add_ins/flag_not00011 falling
+
+  Data Path: M7/float_sub_ins/float_add_ins/e_0 to LED<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              2   0.551   1.040  M7/float_sub_ins/float_add_ins/e_0 (M7/float_sub_ins/float_add_ins/e_0)
+     LUT2:I0->O            1   0.479   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_lut<0> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<0> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<1> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<2> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<3> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<4> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<5> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<5>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<6> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<6>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<7> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<7>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<8> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<8>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<9> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<9>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<10> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<10>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<11> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<11>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<12> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<12>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<13> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<13>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<14> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<14>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<15> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<15>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<16> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<16>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<17> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<17>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<18> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<18>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<19> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<19>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<20> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<20>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<21> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<21>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<22> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<22>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<23> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<23>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<24> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<24>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<25> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<25>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<26> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<26>)
+     MUXCY:CI->O           1   0.056   0.000  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<27> (M7/float_sub_ins/float_add_ins/Msub_S_sub0001_cy<27>)
+     XORCY:CI->O           1   0.786   0.976  M7/float_sub_ins/float_add_ins/Msub_S_sub0001_xor<28> (M7/float_sub_ins/float_add_ins/S_sub0001<28>)
+     LUT4:I0->O            1   0.479   0.000  M7/float_sub_ins/float_add_ins/Mcompar_overflow_cmp_ge0001_lut<7> (M7/float_sub_ins/float_add_ins/Mcompar_overflow_cmp_ge0001_lut<7>)
+     MUXCY:S->O            1   0.644   0.740  M7/float_sub_ins/float_add_ins/Mcompar_overflow_cmp_ge0001_cy<7> (M7/float_sub_ins/float_add_ins/overflow_cmp_ge0001)
+     LUT4:I2->O            1   0.479   0.704  M7/float_sub_ins/float_add_ins/overflow_SW0 (N963)
+     LUT4:I3->O            1   0.479   0.681  M7/float_sub_ins/float_add_ins/overflow (overfloat<1>)
+     OBUF:I->O                 4.909          LED_1_OBUF (LED<1>)
+    ----------------------------------------
+    Total                     14.880ns (10.740ns logic, 4.141ns route)
+                                       (72.2% logic, 27.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 336 / 7
+-------------------------------------------------------------------------
+Delay:               12.321ns (Levels of Logic = 7)
+  Source:            SW<1> (PAD)
+  Destination:       SEGMENT<6> (PAD)
+
+  Data Path: SW<1> to SEGMENT<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            38   0.715   1.899  SW_1_IBUF (SW_1_IBUF)
+     LUT3:I0->O            1   0.479   0.000  M5/disp_current<9>31_F (N1037)
+     MUXF5:I0->O           1   0.314   0.851  M5/disp_current<9>31 (M5/disp_current<9>)
+     LUT3:I1->O            1   0.479   0.000  M5/Mmux_digit_31 (M5/Mmux_digit_31)
+     MUXF5:I1->O           7   0.314   1.201  M5/Mmux_digit_2_f5_0 (M5/digit<1>)
+     LUT4:I0->O            1   0.479   0.681  M5/Mrom_digit_seg21 (SEGMENT_2_OBUF)
+     OBUF:I->O                 4.909          SEGMENT_2_OBUF (SEGMENT<2>)
+    ----------------------------------------
+    Total                     12.321ns (7.689ns logic, 4.632ns route)
+                                       (62.4% logic, 37.6% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 31.00 secs
+Total CPU time to Xst completion: 31.11 secs
+ 
+--> 
+
+Total memory usage is 259888 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  212 (   0 filtered)
+Number of infos    :  104 (   0 filtered)
+

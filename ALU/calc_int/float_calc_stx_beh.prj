@@ -1,0 +1,8 @@
+verilog isim_temp "count_digits_low.v"
+verilog isim_temp "count_digits_high.v"
+verilog isim_temp "float_add.v"
+verilog isim_temp "float_sub.v"
+verilog isim_temp "float_mul.v"
+verilog isim_temp "float_div.v"
+verilog isim_temp "float_calc.v"
+verilog isim_temp "C:/Xilinx/12.4/ISE_DS/ISE//verilog/src/glbl.v"

@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="calc" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/float_calc C:|Users|student|Desktop|calc|float_calc.v/float_add_ins - float_add</ClosedNode>
+         <ClosedNode>/float_calc C:|Users|student|Desktop|calc|float_calc.v/float_mul_ins - float_mul</ClosedNode>
+         <ClosedNode>/float_calc C:|Users|student|Desktop|calc|float_calc.v/float_sub_ins - float_sub</ClosedNode>
+         <ClosedNode>/float_calc F:|Medium|calc|float_calc.v</ClosedNode>
+         <ClosedNode>/int_calc C:|Users|student|Desktop|calc|int_calc.v</ClosedNode>
+         <ClosedNode>/int_calc D:|3130102345|calc_float|int_calc.v</ClosedNode>
+         <ClosedNode>/int_calc D:|3130102345|calc|int_calc.v</ClosedNode>
+         <ClosedNode>/logic_ C:|Users|student|Desktop|calc|logic.v</ClosedNode>
+         <ClosedNode>/logic_ D:|3130102345|calc_float|logic.v</ClosedNode>
+         <ClosedNode>/logic_ D:|3130102345|calc|logic.v</ClosedNode>
+         <ClosedNode>/shift C:|Users|student|Desktop|calc|shift.v</ClosedNode>
+         <ClosedNode>/shift D:|3130102345|calc_float|shift.v</ClosedNode>
+         <ClosedNode>/shift D:|3130102345|calc|shift.v</ClosedNode>
+         <ClosedNode>/test_count_digits E:|Medium|calc|test_count_digits.v</ClosedNode>
+         <ClosedNode>/test_float_add E:|Medium|calc|test_float_add.v</ClosedNode>
+         <ClosedNode>/test_float_add Y:|Desktop|calc|test_float_add.v/uut - float_add</ClosedNode>
+         <ClosedNode>/test_float_calc E:|Medium|calc|test_float_calc.v</ClosedNode>
+         <ClosedNode>/test_float_calc Y:|Desktop|calc|test_float_calc.v/uut - float_calc/float_add_ins - float_add</ClosedNode>
+         <ClosedNode>/test_float_calc Y:|Desktop|calc|test_float_calc.v/uut - float_calc/float_mul_ins - float_mul</ClosedNode>
+         <ClosedNode>/test_float_calc Y:|Desktop|calc|test_float_calc.v/uut - float_calc/float_sub_ins - float_sub</ClosedNode>
+         <ClosedNode>/test_float_div E:|Medium|calc|test_float_div.v</ClosedNode>
+         <ClosedNode>/test_float_div Y:|Desktop|calc|test_float_div.v</ClosedNode>
+         <ClosedNode>/test_float_mul E:|Medium|calc|test_float_mul.v</ClosedNode>
+         <ClosedNode>/test_float_mul Y:|Desktop|calc|test_float_mul.v</ClosedNode>
+         <ClosedNode>/top C:|Users|student|Desktop|calc|top.v/M7 - float_calc</ClosedNode>
+         <ClosedNode>/top D:|3130102345|calc_float|top.v/M7 - float_calc/float_add_ins - float_add</ClosedNode>
+         <ClosedNode>/top D:|3130102345|calc_float|top.v/M7 - float_calc/float_sub_ins - float_sub</ClosedNode>
+         <ClosedNode>/top D:|3130102345|calc|top.v/M7 - float_calc/float_add_ins - float_add</ClosedNode>
+         <ClosedNode>/top D:|3130102345|calc|top.v/M7 - float_calc/float_mul_ins - float_mul</ClosedNode>
+         <ClosedNode>/top D:|3130102345|calc|top.v/M7 - float_calc/float_sub_ins - float_sub</ClosedNode>
+         <ClosedNode>/top D:|3130102345|calc|top.v/M8 - shift</ClosedNode>
+         <ClosedNode>/top D:|3130102345|calc|top.v/M9 - logic_</ClosedNode>
+         <ClosedNode>/top E:|Medium|calc|top.v/M6 - int_calc</ClosedNode>
+         <ClosedNode>/top E:|Medium|calc|top.v/M6 - int_calc/adder - adder_32bits</ClosedNode>
+         <ClosedNode>/top E:|Medium|calc|top.v/M6 - int_calc/muler - mul_32_32_64</ClosedNode>
+         <ClosedNode>/top E:|Medium|calc|top.v/M6 - int_calc/suber - adder_32bits</ClosedNode>
+         <ClosedNode>/top E:|Medium|calc|top.v/M7 - float_calc</ClosedNode>
+         <ClosedNode>/top E:|Medium|calc|top.v/M8 - shift</ClosedNode>
+         <ClosedNode>/top E:|Medium|calc|top.v/M9 - logic_</ClosedNode>
+         <ClosedNode>/top F:|Medium|calc|top.v/M6 - int_calc</ClosedNode>
+         <ClosedNode>/top F:|Medium|calc|top.v/M7 - float_calc</ClosedNode>
+         <ClosedNode>/top F:|Medium|calc|top.v/M7 - float_calc/float_add_ins - float_add</ClosedNode>
+         <ClosedNode>/top F:|Medium|calc|top.v/M7 - float_calc/float_mul_ins - float_mul</ClosedNode>
+         <ClosedNode>/top F:|Medium|calc|top.v/M7 - float_calc/float_sub_ins - float_sub</ClosedNode>
+         <ClosedNode>/top F:|Medium|calc|top.v/M8 - shift</ClosedNode>
+         <ClosedNode>/top F:|Medium|calc|top.v/M9 - logic_</ClosedNode>
+         <ClosedNode>/top Y:|Desktop|calc|top.v/M7 - float_calc</ClosedNode>
+         <ClosedNode>/top Y:|Desktop|calc|top.v/M8 - shift</ClosedNode>
+         <ClosedNode>/top Y:|Desktop|calc|top.v/M9 - logic_</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000014f000000020000000000000000000000000000000064ffffffff0000008100000000000000020000014f0000000100000000000000000000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>float_div_ins - float_div (D:/3130102345/calc_float/float_div.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Design Utilities</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000144000000010000000100000000000000000000000064ffffffff000000810000000000000001000001440000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Design Utilities</CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000002a2000000040101000100000000000000000000000064ffffffff0000008100000000000000040000003d0000000100000000000000240000000100000000000000780000000100000000000001c90000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000000b5000000010001000100000000000000000000000064ffffffff000000810000000000000001000000b50000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>Synthesize - XST</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000133000000010000000100000000000000000000000064ffffffff000000810000000000000001000001330000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000144000000010000000100000000000000000000000064ffffffff000000810000000000000001000001440000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <SourceProcessView>000000ff0000000000000002000001100000000001000000050100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/test_count_digits Y:|Desktop|calc|test_count_digits.v</ClosedNode>
+         <ClosedNode>/test_float_add Y:|Desktop|calc|test_float_add.v/uut - float_add</ClosedNode>
+         <ClosedNode>/test_float_calc Y:|Desktop|calc|test_float_calc.v/uut - float_calc/float_add_ins - float_add</ClosedNode>
+         <ClosedNode>/test_float_calc Y:|Desktop|calc|test_float_calc.v/uut - float_calc/float_sub_ins - float_sub</ClosedNode>
+         <ClosedNode>/test_float_mul Y:|Desktop|calc|test_float_mul.v/uut - float_mul</ClosedNode>
+         <ClosedNode>/top Y:|Desktop|calc|top.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Unassigned User Library Modules</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b6000000020000000000000000000000000000000064ffffffff000000810000000000000002000001b60000000100000000000000000000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Unassigned User Library Modules</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+</Project>

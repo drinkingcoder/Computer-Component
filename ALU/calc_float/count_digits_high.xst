@@ -1,0 +1,5 @@
+set -tmpdir "Y:/Desktop/calc/xst/projnav.tmp"
+set -xsthdpdir "Y:/Desktop/calc/xst"
+elaborate
+-ifn count_digits_high.prj
+-ifmt mixed
